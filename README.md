@@ -11,6 +11,7 @@ A complete Docksal configuration for working with Pantheon-powered sites.
 *  Empty php.ini file (ready for customization).  
 *  "fin init" command that reset the local environment, creates and downloads (using Terminus) a new database backup from Pantheon, and (optionally) enables development-related modules in the local environment.  
 *  "fin downloaddb" command that creates and downloads (using Terminus) a new database backup from Pantheon, and (optionally) enables development-related modules in the local environment.  
+*  (Commented out) support for xdebug in the docksal-local.yml file.  
 
 ## Prerequisites  
 
@@ -27,10 +28,13 @@ A complete Docksal configuration for working with Pantheon-powered sites.
 
 *  Install Docksal (http://docksal.readthedocs.io/en/master/getting-started/setup/).  
 
+*  Create a "database_dumps" directory in your project root.
+
 *  Rename this repository from `drupaleasy_pantheon-docksal` to `.docksal` and place in the root of your project so that it is a sibling of your web docroot. For example:
 
 ```
 /project_root/.docksal/
+/project_root/database_dumps/
 /project_root/web/{{all the Drupal}}
 ```
 
