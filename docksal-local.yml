@@ -1,0 +1,12 @@
+version: "2.1"
+
+services:
+  # Adds a Solr container with version 3.x of Solr - see 
+  solr:
+    hostname: solr
+    image: docksal/solr:1.0-solr3
+  # Changes the command-line interface to use the -dev version of the PHP 7.x container.
+  cli:
+    image: docksal/cli:edge-php7
+    environment:
+#      - XDEBUG_ENABLED=1
