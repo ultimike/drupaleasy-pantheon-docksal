@@ -1,12 +1,17 @@
 version: "2.1"
 
 services:
-  # Adds a Solr container with version 3.x of Solr - see 
+  # Adds a Solr container with version 3.x of Solr - see
+  #  http://docksal.readthedocs.io/en/master/tools/apache-solr/ and 
+  #  https://hub.docker.com/r/docksal/solr/tags/. 
   solr:
     hostname: solr
     image: docksal/solr:1.0-solr3
-  # Changes the command-line interface to use the -dev version of the PHP 7.x container.
+  # Changes the command-line interface to use the -dev version of the PHP 7.x container - 
+  #  see http://docksal.readthedocs.io/en/master/advanced/stack-settings/ and 
+  #  https://hub.docker.com/r/docksal/cli/tags/.  
   cli:
     image: docksal/cli:edge-php7
+    # Uncomment to add support for xdebug - see http://docksal.readthedocs.io/en/master/tools/xdebug/.  
 #    environment:
 #      - XDEBUG_ENABLED=1
