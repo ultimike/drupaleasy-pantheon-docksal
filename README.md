@@ -29,7 +29,9 @@ A complete Docksal configuration for working with Pantheon-powered sites.
 
 *  Rename this repository from `drupaleasy_pantheon-docksal` to `.docksal` and place in the root of your project so that it is a sibling of your web docroot. For example:
 
-`/project_root/.docksal/`
-`/project_root/web/{{all the Drupal}}`
+```
+/project_root/.docksal/
+/project_root/web/{{all the Drupal}}
+```
 
 *  Run `fin start` (see http://docksal.readthedocs.io/en/master/getting-started/project-setup/).  
