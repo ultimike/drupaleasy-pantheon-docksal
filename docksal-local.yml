@@ -8,5 +8,5 @@ services:
   # Changes the command-line interface to use the -dev version of the PHP 7.x container.
   cli:
     image: docksal/cli:edge-php7
-    environment:
+#    environment:
 #      - XDEBUG_ENABLED=1
