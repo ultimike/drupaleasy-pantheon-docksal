@@ -3,10 +3,16 @@ version: "2.1"
 services:
   # Adds a Solr container with version 3.x of Solr - see
   #  http://docksal.readthedocs.io/en/master/tools/apache-solr/ and 
-  #  https://hub.docker.com/r/docksal/solr/tags/. 
+  #  https://hub.docker.com/r/docksal/solr/tags/.
+  # The "ports" and "environment" configuration allows the Solr server to be interacted
+  #  directly with at http://192.168.64.100:8983/solr/
   solr:
     hostname: solr
     image: docksal/solr:1.0-solr3
+    ports:
+      - "8983:8983"
+    environment:
+      - DOMAIN_NAME=solr.${VIRTUAL_HOST}
   # Changes the command-line interface to use the -dev version of the PHP 7.x container - 
   #  see http://docksal.readthedocs.io/en/master/advanced/stack-settings/ and 
   #  https://hub.docker.com/r/docksal/cli/tags/.  
