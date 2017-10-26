@@ -15,10 +15,10 @@ import_database ()
   rm -f database_dumps/db.sql > /dev/null
   rm -f database_dumps/db.sql.gz > /dev/null
   echo "Creating copy of the dev database...";
-  terminus backup:create ${PROJECT_NAME}.dev --element=database
-  echo "Downloading copy of dev database...";
-  terminus backup:get ${PROJECT_NAME}.dev --element=database | xargs curl -o database_dumps/db.sql.gz
-  echo "Extracting and importing copy of dev database...";
+  terminus backup:create ${PROJECT_NAME}.${PANTHEON_SITE_ENV} --element=database
+  echo "Downloading copy of env database...";
+  terminus backup:get ${PROJECT_NAME}.${PANTHEON_SITE_ENV} --element=database | xargs curl -o database_dumps/db.sql.gz
+  echo "Extracting and importing copy of ${PANTHEON_SITE_ENV} database...";
   fin exec "gunzip -fk database_dumps/db.sql.gz"
   fin db import "database_dumps/db.sql"
 }

@@ -19,5 +19,6 @@ services:
   cli:
     image: docksal/cli:edge-php7
     # Uncomment to add support for xdebug - see http://docksal.readthedocs.io/en/master/tools/xdebug/.  
-#    environment:
+    environment:
+      - PANTHEON_SITE_ENV
 #      - XDEBUG_ENABLED=1
